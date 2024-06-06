@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18" height="18" viewBox="0 0 18 18">
+  <defs>
+    <clipPath id="clip-path">
+      <rect id="Rectangle_175" data-name="Rectangle 175" width="18" height="18" transform="translate(318 200)" fill="#fff"/>
+    </clipPath>
+  </defs>
+  <g id="Mask_Group_3" data-name="Mask Group 3" transform="translate(-318 -200)" clip-path="url(#clip-path)">
+    <g id="ic_local_florist_black_24px" transform="translate(320.25 200.75)">
+      <path id="Path_174" data-name="Path 174" d="M8.75,16.417a6.751,6.751,0,0,0,6.75-6.75A6.751,6.751,0,0,0,8.75,16.417ZM3.95,7.6A1.877,1.877,0,0,0,6.89,9.149l-.015.142a1.875,1.875,0,0,0,3.75,0l-.015-.142a1.848,1.848,0,0,0,1.065.33,1.871,1.871,0,0,0,.8-3.562A1.872,1.872,0,1,0,10.61,2.684l.015-.142a1.875,1.875,0,0,0-3.75,0l.015.142a1.848,1.848,0,0,0-1.065-.33,1.871,1.871,0,0,0-.8,3.563A1.868,1.868,0,0,0,3.95,7.6Zm4.8-3.563A1.875,1.875,0,1,1,6.875,5.917,1.876,1.876,0,0,1,8.75,4.042ZM2,9.667a6.751,6.751,0,0,0,6.75,6.75A6.751,6.751,0,0,0,2,9.667Z" transform="translate(-2 -0.667)" fill="#ebd0ce"/>
+    </g>
+  </g>
+</svg>
