@@ -13,6 +13,7 @@ import EmptySitter from "../components/emptySitter";
 import ListItem from "../components/listItem";
 import Footer from "../components/footer/Footer";
 import Location from "../components/location";
+import Receipt from "../components/receipt";
 
 
 
@@ -21,8 +22,13 @@ const Home = () => {
     <div className="flex-row space-between">
       <div style={{flex:1, padding: "2rem"}}>
           <Ginger />
+
+          <div className="stateTitle"><b>SERVICE RECEIPT</b></div>
+          <Receipt/>
+
           <div className="stateTitle"><b>SERVICE LIST ITEM</b></div>
           <ServiceList />
+
           <Footer />
 
         </div>
