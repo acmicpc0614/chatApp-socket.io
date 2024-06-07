@@ -14,7 +14,7 @@ const Receipt = () => {
         <img style={{width: 36, marginRight: "2rem", marginTop: "1rem"}} src={avatar}/>
       </div>
       <div className="flex mt-1" style={{backgroundColor: "#F0F1F7", border: "1px solid #DADBE6"}}>
-        <div style={{margin: "3rem"}}>
+        <div style={{padding: "3rem"}}>
           <div className="flex flex-row flex-wrap align-items-center">
             <div className="" style={{flex: 2, fontSize: 13}}>
               <span>SERVICE TYPE</span>
@@ -72,7 +72,7 @@ const Receipt = () => {
             </div>
             
             <div style={{flex:5, textAlign:"start"}}>
-              <button className="btn btn-primary dropdown-toggle" style={{backgroundColor: "#ffffff", color: "#545871", width: "100%", textAlign:"start"}}>
+              <button className="btn btn-secondary dropdown-toggle" style={{backgroundColor: "#ffffff", color: "#545871", width: "100%", textAlign:"start", borderColor: "#DADBE6"}}>
                 Mastercard ending 2431
               </button>
             </div>

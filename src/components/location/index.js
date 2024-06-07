@@ -14,7 +14,7 @@ const Location = () => {
       <label className="m-4">Arrival: 10:00 AM, Departure: 10:30 AM</label>
       <div className="flex flex-row"
       style={{
-        alignItems: "center",
+        // alignItems: "center",
         justifyContent: "center"
       }}>
         <div style={{marginBottom: "2rem", marginLeft: "1rem"}}>
@@ -22,7 +22,8 @@ const Location = () => {
             src={map}
           />
         </div>
-      <div className="m-4">
+      <div className=" flex-col" style={{
+       marginLeft:"1rem", marginRight:"1rem", marginBottom: "3rem", justifyContent: "space-between", }}>
       <div>
           <button className="btn btn-outline-secondary"
               style={{
@@ -54,11 +55,11 @@ const Location = () => {
           </button>
         </div>
         <div>
-          <button className="btn btn-outline-secondary"
+          <button className="btn btn-outline-secondary "
               style={{
                 background: "#FFFFFF",
                 color: "#9597A6",
-                width: "7rem"
+                width: "7rem",
               }}>
                 <img src={pees} style={{width: "1rem"}}/><span>&nbsp;2 pees</span>
           </button>
