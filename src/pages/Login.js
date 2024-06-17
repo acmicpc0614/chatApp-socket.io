@@ -1,17 +1,18 @@
 import axios from "axios";
 import { useState } from "react";
+import { useNavigate } from "react-router";
 import Swal from "sweetalert2";
 
 const Login = (props) => {
   const [email, setEmail] = useState("admin");
   const [password, setPassword] = useState("123456");
-
+  const navigate = useNavigate();
   const handleLogin = (e) => {
     e.preventDefault();
     const body = { userID: email, password: password };
 
     axios
-      .post("http://localhost:2223/user/login", body)
+      .post(`http://localhost:${process.env.SERVER_PORT}/user/login`, body)
       .then((res) => {
         // console.log(res.data);
         localStorage.setItem("is_authenticated", true);
@@ -35,6 +36,7 @@ const Login = (props) => {
             });
           },
         });
+        navigate("/commit");
       })
       .catch((err) => {
         // console.log(err.response.data);
@@ -105,6 +107,13 @@ const Login = (props) => {
         >
           Login
         </button>
+        <label
+          onClick={() => {
+            navigate("/register");
+          }}
+        >
+          Register
+        </label>
       </div>
     </div>
   );

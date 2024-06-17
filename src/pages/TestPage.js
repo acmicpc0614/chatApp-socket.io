@@ -19,11 +19,11 @@ const TestPage = () => {
       </div>
       <div className="container p-3">
         <TestComp />
-        {/* <RoundBtn /> */}
-        {/* <RoundBtnSpan /> */}
-        {/* <ToggleBtn />  */}
-        {/* <Review />
-        <ColorPicker /> */}
+        <RoundBtn />
+        <RoundBtnSpan />
+        <ToggleBtn />
+        <Review />
+        <ColorPicker />
       </div>
     </>
   );
