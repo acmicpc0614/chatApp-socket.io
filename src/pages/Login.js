@@ -4,15 +4,15 @@ import { useNavigate } from "react-router";
 import Swal from "sweetalert2";
 
 const Login = (props) => {
-  const [email, setEmail] = useState("admin");
-  const [password, setPassword] = useState("123456");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
   const navigate = useNavigate();
   const handleLogin = (e) => {
     e.preventDefault();
     const body = { userID: email, password: password };
 
     axios
-      .post(`http://localhost:${process.env.SERVER_PORT}/user/login`, body)
+      .post("http://localhost:2223/user/login", body)
       .then((res) => {
         // console.log(res.data);
         localStorage.setItem("is_authenticated", true);
@@ -39,7 +39,7 @@ const Login = (props) => {
         navigate("/commit");
       })
       .catch((err) => {
-        // console.log(err.response.data);
+        let error = err.response.data.error;
         Swal.fire({
           timer: 1500,
           showConfirmButton: false,
@@ -50,7 +50,7 @@ const Login = (props) => {
             Swal.fire({
               icon: "error",
               title: "Error!",
-              text: "Incorrect email or password.",
+              text: `${error}`,
               showConfirmButton: true,
             });
           },
@@ -62,30 +62,35 @@ const Login = (props) => {
     <div
       className="container d-flex"
       style={{
-        marginTop: "10%",
         justifyContent: "center",
+        alignContent: "center",
+        height: "100vh",
+        display: "flex",
+        alignItems: "center",
         alignContent: "center",
       }}
     >
       <div
+        className="container"
         style={{
-          width: "80%",
-          height: "60%",
-          padding: "10rem",
+          width: "500px",
+          // height: "300px",
+          // padding: "10rem",
           backgroundColor: "#eeeeeeee",
           boxShadow: "rgba(50, 50, 93, 0.25) 0px 0px 100px 10px",
-          borderRadius: "2rem",
+          borderRadius: "0.5rem",
           // border: "1px solid #000",
-          minWidth: "600px",
+          minWidth: "300px",
+          padding: "2rem",
         }}
       >
-        <h1>Admin Login</h1>
-        <label htmlFor="email">Email</label>
+        {/* <h1>Admin Login</h1> */}
+        <label htmlFor="email">UserID</label>
         <input
           id="email"
           type="email"
           name="email"
-          placeholder="admin@example.com"
+          placeholder="UserID"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
         />
@@ -94,26 +99,52 @@ const Login = (props) => {
           id="password"
           type="password"
           name="password"
-          placeholder="qwerty"
+          placeholder="***********"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
+          style={{ border: password === "" ? "1px solid #ff0000" : "" }}
         />
-        <button
+
+        {password === "" ? (
+          <div
+            style={{
+              color: "#ff0000",
+            }}
+          >
+            <i>Please choose a password.</i>
+          </div>
+        ) : (
+          <></>
+        )}
+        <div
+          className="d-flex"
           style={{
-            marginTop: "25px",
-            width: "100%",
-          }}
-          onClick={handleLogin}
-        >
-          Login
-        </button>
-        <label
-          onClick={() => {
-            navigate("/register");
+            alignItems: "center",
+            flexDirection: "row",
+            justifyContent: "space-between",
           }}
         >
-          Register
-        </label>
+          <div>
+            <button
+              style={{
+                marginTop: "25px",
+                width: "100%",
+              }}
+              onClick={handleLogin}
+            >
+              Sign In
+            </button>
+          </div>
+          <div
+            className="register-btn"
+            onClick={() => {
+              navigate("/register");
+            }}
+          >
+            <b>Register</b>
+            {/* <b>Forgot Password?</b> */}
+          </div>
+        </div>
       </div>
     </div>
   );

@@ -1,8 +1,9 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import avatar from "../../data/chatImg.svg";
 import axios from "axios";
 
 const SingleStory = (props) => {
+  const [imgID, setImgID] = useState(1);
   const btnDelonClick = (id) => {
     const body = { id: id };
     axios
@@ -27,7 +28,7 @@ const SingleStory = (props) => {
 
   return (
     <div className="container d-flex flex-col m-2">
-      <div className="containr">
+      <div className="">
         <img
           src={avatar}
           style={{

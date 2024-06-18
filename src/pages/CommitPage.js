@@ -32,6 +32,7 @@ const CommitPage = () => {
         creator_name={storyObj.creator_name}
         content={storyObj.content}
         time={storyObj.date}
+        creator_id={storyObj.creator_id}
         setStories={setStories}
       />
     ));
