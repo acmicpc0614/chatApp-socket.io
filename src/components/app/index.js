@@ -11,7 +11,7 @@ import socketIO from "socket.io-client";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Register from "../../pages/Register";
 
-// const socket = socketIO.connect("http://localhost:2223");
+const socket = socketIO.connect("http://192.168.144.110:2223");
 const App = () => {
   const [isLogin, setIsLogin] = useState(false);
 
@@ -19,20 +19,12 @@ const App = () => {
     setIsLogin(JSON.parse(localStorage.getItem("is_authenticated")));
   }, []);
   return (
-    // <div
-    //   className="p-3"
-    //   style={{
-    //     backgroundColor: "#0d3a2a",
-    //     height: "100vh",
-    //     display: "flex",
-    //     alignItems: "center",
-    //     alignContent: "center",
-    //   }}
-    // >
-    //   <TestPage />
-    // </div>
     <BrowserRouter>
-      {isLogin ? <TopNav setIsLogin={setIsLogin} isLogin={isLogin} /> : <></>}
+      {isLogin ? (
+        <TopNav setIsLogin={setIsLogin} isLogin={isLogin} socket={socket} />
+      ) : (
+        <></>
+      )}
       <div>
         <Routes>
           <Route
@@ -44,10 +36,9 @@ const App = () => {
             element={<Login setIsLogin={setIsLogin} isLogin={isLogin} />}
           />
           <Route path="/register" element={<Register />} />
-
           <Route path="/home" element={<Homepage />} />
           <Route path="/commit" element={<CommitPage />} />
-          {/* <Route path="/chat" element={<ChatPage socket={socket} />} /> */}
+          <Route path="/chat" element={<ChatPage socket={socket} />} />
           <Route path="/test" element={<TestPage />} />
           <Route path="*" element={<NoPage title={"404"} />}></Route>
         </Routes>

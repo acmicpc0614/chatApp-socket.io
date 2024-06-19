@@ -8,7 +8,7 @@
  * e.g. get('/api/foo', { bar: 0 }).then(res => console.log(res))
  */
 
-const BASE_URL = "http://localhost:2223";
+const BASE_URL = "http://192.168.144.110:2223";
 
 // ex: formatParams({ some_key: "some_value", a: "b"}) => "some_key=some_value&a=b"
 function formatParams(params) {

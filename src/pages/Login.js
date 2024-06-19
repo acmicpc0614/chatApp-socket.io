@@ -12,12 +12,13 @@ const Login = (props) => {
     const body = { userID: email, password: password };
 
     axios
-      .post("http://localhost:2223/user/login", body)
+      .post("http://192.168.144.110:2223/user/login", body)
       .then((res) => {
         // console.log(res.data);
         localStorage.setItem("is_authenticated", true);
-        localStorage.setItem("name", res.data.name);
+        localStorage.setItem("userName", res.data.name);
         localStorage.setItem("userID", res.data.userID);
+        localStorage.setItem("userAvatar", res.data.avatar);
 
         props.setIsLogin(true);
 

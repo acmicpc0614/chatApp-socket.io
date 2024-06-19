@@ -26,6 +26,7 @@ const ChatPage = ({ socket }) => {
     lastMessageRef.current?.scrollIntoView({ behavior: "smooth" });
   }, [messages]);
 
+  // console.log("___________>", socket);
   return (
     <div className="chat">
       <ChatBar socket={socket} />

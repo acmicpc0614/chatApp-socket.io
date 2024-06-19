@@ -6,7 +6,7 @@ const CommitPage = () => {
   const [stories, setStories] = useState([]);
   useEffect(() => {
     axios
-      .get("http://localhost:2223/story/all")
+      .get("http://192.168.144.110:2223/story/all")
       .then((res) => {
         // console.log(res.data);
         setStories(res.data);

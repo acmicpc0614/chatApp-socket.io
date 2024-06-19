@@ -7,7 +7,7 @@ const SingleStory = (props) => {
   const btnDelonClick = (id) => {
     const body = { id: id };
     axios
-      .post("http://localhost:2223/story/deleteOne", body)
+      .post("http://192.168.144.110:2223/story/deleteOne", body)
       .then((res) => {
         console.log("deleted");
       })
@@ -16,7 +16,7 @@ const SingleStory = (props) => {
       });
 
     axios
-      .get("http://localhost:2223/story/all")
+      .get("http://192.168.144.110:2223/story/all")
       .then((res) => {
         // console.log(res.data);
         props.setStories(res.data);
@@ -30,10 +30,11 @@ const SingleStory = (props) => {
     <div className="container d-flex flex-col m-2">
       <div className="">
         <img
-          src={avatar}
+          src={require("../../data/avatars/man-6.png")}
           style={{
             border: "1px solid #9095A4",
             borderRadius: "50%",
+            width: "40px",
           }}
         />
       </div>
@@ -60,7 +61,8 @@ const SingleStory = (props) => {
             paddingLeft: "30px",
           }}
         >
-          <div className="Card-storyContent">{props.content}😀</div>
+          {/* 😀 */}
+          <div className="Card-storyContent">{props.content}</div>
         </div>
       </div>
       <span

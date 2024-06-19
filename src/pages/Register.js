@@ -1,8 +1,8 @@
 import axios from "axios";
 import { useState } from "react";
 import { useNavigate } from "react-router";
-import avatar from "../data/avatars/male-1.svg";
 import Swal from "sweetalert2";
+import Modal from "../components/Modal/Modal";
 
 const Register = () => {
   const [name, setname] = useState("");
@@ -11,10 +11,12 @@ const Register = () => {
   const [birthday, setBirthday] = useState("");
   const [password, setPassword] = useState("");
   const [password2, setPassword2] = useState("");
+  const [avatarID, setavatarID] = useState("1");
+  const [modalopen, setModalopen] = useState(false);
   // name, gender, birthday, password, userID, password2
   const navigate = useNavigate();
   const handleClick = () => {
-    console.log(name, userID, password, password2);
+    // console.log(name, userID, password, password2, gender, birthday, avatarID);
     const body = {
       name: name,
       gender: gender,
@@ -24,7 +26,7 @@ const Register = () => {
       password2: password2,
     };
     axios
-      .post("http://localhost:2223/user/register", body)
+      .post("http://192.168.144.110:2223/user/register", body)
       .then((res) => {
         Swal.fire({
           timer: 500,
@@ -47,6 +49,7 @@ const Register = () => {
         console.log(err);
       });
   };
+
   return (
     <div
       className="container d-flex"
@@ -104,12 +107,15 @@ const Register = () => {
             }}
           >
             <img
-              src={avatar}
+              src={require(`../data/avatars/man-${avatarID}.png`)}
               style={{
                 width: "120px",
                 height: "120px",
-                border: "1px solid Blue",
+                border: "3px solid #aaaaaa",
                 borderRadius: "50%",
+              }}
+              onClick={() => {
+                setModalopen(true);
               }}
             />
           </div>
@@ -181,8 +187,20 @@ const Register = () => {
                   backgroundColor: "#eeeeee",
                 }}
               >
-                <option>Male</option>
-                <option>Female</option>
+                <option
+                  onClick={() => {
+                    setgender(1);
+                  }}
+                >
+                  Male
+                </option>
+                <option
+                  onClick={() => {
+                    setgender(0);
+                  }}
+                >
+                  Female
+                </option>
               </select>
             </div>
           </div>
@@ -205,11 +223,11 @@ const Register = () => {
 
         <div>
           <label>
-            <b>Repeat Password</b>
+            <b>Conform Password</b>
           </label>
           <input
             type="password"
-            placeholder="Repeat Password"
+            placeholder="conform Password"
             value={password2}
             onChange={(e) => {
               {
@@ -232,6 +250,9 @@ const Register = () => {
           </button>
         </div>
       </div>
+      {modalopen && (
+        <Modal setModalopen={setModalopen} setavatarID={setavatarID} />
+      )}
     </div>
   );
 };
