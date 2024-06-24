@@ -1,3 +1,4 @@
+import TaskList from "../components/TaskList";
 import ColorPicker from "../components/roundbtn/ColorPicker";
 import Review from "../components/roundbtn/Review";
 import RoundBtn from "../components/roundbtn/RoundBtn";
@@ -10,12 +11,14 @@ const TestPage = () => {
   return (
     <>
       <div
-        className="container p-3"
+        className=""
         style={{
           display: "flex",
           flexDirection: "column",
-          alignItems: "center",
           alignContent: "center",
+          // justifyContent: "center",
+          backgroundColor: "#dddddd",
+          height: "100vh",
         }}
       >
         {/* <TestComp /> */}
@@ -25,6 +28,7 @@ const TestPage = () => {
         {/* <Review /> */}
         {/* <ColorPicker /> */}
         <PwdGenerator />
+        {/* <TaskList /> */}
       </div>
     </>
   );

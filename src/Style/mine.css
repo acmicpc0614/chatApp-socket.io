@@ -91,7 +91,7 @@ body {
 
 @keyframes delspin {
   0% { transform: rotateX(0deg) ; scale: 1;}
-  50% { transform: rotateX(60deg) ; scale: 2; color: rgb(255, 0, 0); }
+  50% { transform: rotateX(60deg) ; scale: 1; color: rgb(255, 255, 255); }
   100% { transform: rotateX(0deg) ; scale: 1;}
   /* border: 6px solid #343fdb88; */
 }
@@ -559,4 +559,69 @@ font-size: 15px;
 }
 .register-btn:hover {
   cursor: pointer;
+}
+.addTask1-btn {
+  width: 80px;
+  text-align: center;
+  font-size: 16px;
+  margin: 0.5rem;
+  border: 1px solid rgb(255, 0, 0);
+  color: rgb(255, 0, 0);
+  border-radius: 0.5rem;
+}
+.addTask2-btn {
+  width: 80px;
+  text-align: center;
+  font-size: 16px;
+  margin: 0.5rem;
+  border: 1px solid orange;
+  color: orange;
+  border-radius: 0.5rem;
+}
+.addTask3-btn {
+  width: 80px;
+  text-align: center;
+  font-size: 16px;
+  margin: 0.5rem;
+  border: 1px solid green;
+  color: green;
+  border-radius: 0.5rem;
+}
+.addTask1-btn, .addTask2-btn, .addTask3-btn:hover{
+  cursor: pointer;
+}
+.curpo:hover{
+  cursor: pointer;
+}
+
+.task-list-item {
+  box-shadow: rgba(50, 50, 93, 0.25) 10px 11px 15px -1px;
+}
+.task-list-item:hover {
+  cursor: pointer ;
+  animation: taskspin 0.5s linear infinite;
+  box-shadow: rgba(50, 50, 93, 1) 10px 11px 15px -1px;
+  background-color: #c4cfdf88;
+}
+
+@keyframes taskspinn {
+  0% { transform: rotateX(0deg) ; scale: 1;}
+  50% { transform: rotateX(20deg) ; scale: 1.00; }
+  100% { transform: rotateX(0deg) ; scale: 1;}
+  /* border: 6px solid #343fdb88; */
+}
+
+.modal-text {
+  font-size: 14px;
+  font-weight: bold;
+  color: gray;
+}
+.edit-btn:hover {
+  color: #5085d4;
+}
+.del-btn:hover {
+  color: #d08dfd;
+}
+.del-btn{
+  color: red;
 }
