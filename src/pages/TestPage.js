@@ -16,18 +16,16 @@ const TestPage = () => {
           display: "flex",
           flexDirection: "column",
           alignContent: "center",
-          // justifyContent: "center",
-          backgroundColor: "#dddddd",
-          height: "100vh",
+          justifyContent: "center",
         }}
       >
-        {/* <TestComp /> */}
+        <TestComp />
         {/* <RoundBtn /> */}
         {/* <RoundBtnSpan /> */}
         {/* <ToggleBtn /> */}
         {/* <Review /> */}
         {/* <ColorPicker /> */}
-        <PwdGenerator />
+        {/* <PwdGenerator /> */}
         {/* <TaskList /> */}
       </div>
     </>

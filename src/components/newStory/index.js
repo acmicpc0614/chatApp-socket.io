@@ -5,6 +5,7 @@ import axios from "axios";
 const NewStory = (props) => {
   const addStory = (value) => {
     const body = {
+      token: localStorage.getItem("token"),
       creator_name: localStorage.getItem("name"),
       creator_id: localStorage.getItem("userID"),
       content: value,

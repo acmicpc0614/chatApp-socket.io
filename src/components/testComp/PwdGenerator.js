@@ -33,10 +33,6 @@ const PwdGenerator = () => {
   const NumberSerial = "0123456789";
   const SpecialSerial = "!@#$%^&*()";
 
-  //   const rndData = [{
-  //     965780, 744427 290002, 461023, 313579, 743259, 819783, 39751, 688341, 805503,
-  //   },
-  // ];
   const RandFn = (size) => {
     let tmp;
     tmp = Math.floor(Date.now() * Math.random()) % size;

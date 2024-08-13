@@ -1,5 +1,5 @@
 body {
-  background-color: #F0F0F0;
+  background-color: #f0f0f0;
   justify-content: center;
 }
 
@@ -14,7 +14,6 @@ body {
   --bs-white-red: #f7eceb;
 }
 
-
 .Card-container {
   border: var(--darkgrey) 1px solid;
   border-radius: var(--xs);
@@ -22,16 +21,26 @@ body {
 }
 
 .Card-container:hover {
-	box-shadow: rgba(50, 50, 93, 0.25) 10px 11px 15px -1px;
+  box-shadow: rgba(50, 50, 93, 0.25) 10px 11px 15px -1px;
   background-color: #c4cfdf88;
   cursor: pointer;
   animation: spin 0.5s linear 2;
 }
 
 @keyframes spin {
-  0% { transform: rotateX(0deg); scale: 1;}
-  50% { transform: rotateX(30deg); scale: 1.01; border: 1px solid #34acdb88;}
-  100% { transform: rotateX(0deg); scale: 1;}
+  0% {
+    transform: rotateX(0deg);
+    scale: 1;
+  }
+  50% {
+    transform: rotateX(30deg);
+    scale: 1.01;
+    border: 1px solid #34acdb88;
+  }
+  100% {
+    transform: rotateX(0deg);
+    scale: 1;
+  }
   /* border: 6px solid #343fdb88; */
 }
 
@@ -69,7 +78,6 @@ body {
 
 .btn-story {
   opacity: 0.5;
-  
 }
 
 .btn-story:hover {
@@ -83,16 +91,44 @@ body {
   height: 100%;
 }
 
+.user-btn-del:hover {
+  color: red;
+}
+
+.user-item {
+  width: 80%;
+  padding: 15px;
+  text-align: center;
+  justify-content: center;
+  border-bottom: 1px solid #333333;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.user-item:hover {
+  background-color: #dddddd;
+  cursor: pointer;
+}
 .Card-btnDel:hover {
-  cursor: pointer ;
+  cursor: pointer;
   opacity: 1;
   animation: delspin 0.5s linear infinite;
 }
 
 @keyframes delspin {
-  0% { transform: rotateX(0deg) ; scale: 1;}
-  50% { transform: rotateX(60deg) ; scale: 1; color: rgb(255, 255, 255); }
-  100% { transform: rotateX(0deg) ; scale: 1;}
+  0% {
+    transform: rotateX(0deg);
+    scale: 1;
+  }
+  50% {
+    transform: rotateX(60deg);
+    scale: 1;
+    color: rgb(255, 255, 255);
+  }
+  100% {
+    transform: rotateX(0deg);
+    scale: 1;
+  }
   /* border: 6px solid #343fdb88; */
 }
 
@@ -162,7 +198,6 @@ body {
   text-decoration: none;
   font-size: 17px;
   cursor: pointer;
-
 }
 
 .topnav div:hover {
@@ -179,7 +214,6 @@ body {
   font-weight: bold;
 }
 
-
 .test-bg {
   background-image: url("./../data/testbgImg.svg");
   background-repeat: no-repeat;
@@ -188,15 +222,14 @@ body {
 }
 
 .round-btn:hover {
-  transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
+    border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 
-  background-color: #4B00E055;
+  background-color: #4b00e055;
 }
-
 
 /* this is review button */
 .star-rating {
-
   display: flex;
   flex-direction: row-reverse;
   font-size: 1.5em;
@@ -210,19 +243,16 @@ body {
 
 .star-rating label {
   color: #ccc;
-
 }
 
 .star-rating input:checked ~ label {
-  color: #4B00E0
+  color: #4b00e0;
 }
 
 .star-rating label:hover,
-
 .star-rating label:hover ~ label {
-  color: #4B00E0aa
+  color: #4b00e0aa;
 }
-
 
 /* this is style for toggle button */
 .switch {
@@ -232,7 +262,7 @@ body {
   height: 50px;
 }
 
-.switch input { 
+.switch input {
   opacity: 0;
   width: 0;
   height: 0;
@@ -246,8 +276,8 @@ body {
   right: 0;
   bottom: 0;
   background-color: #ccc;
-  -webkit-transition: .4s;
-  transition: .4s;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
 }
 
 .slider:before {
@@ -259,16 +289,16 @@ body {
   left: 4px;
   bottom: 4px;
   /* background-color: white; */
-  -webkit-transition: .4s;
-  transition: .4s;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
 }
 
 input:checked + .slider {
-  background-color: #2196F3;
+  background-color: #2196f3;
 }
 
 input:focus + .slider {
-  box-shadow: 0 0 1px #2196F3;
+  box-shadow: 0 0 1px #2196f3;
 }
 
 input:checked + .slider:before {
@@ -292,12 +322,21 @@ input:checked + .slider:before {
   padding-bottom: 10px;
   color: white;
 }
-.html {width: 90%; background-color: #04AA6D;}
-.css {width: 80%; background-color: #2196F3;}
-.js { background-color: #f44336;}
-.php {width: 60%; background-color: #808080;}
-
-
+.html {
+  width: 90%;
+  background-color: #04aa6d;
+}
+.css {
+  width: 80%;
+  background-color: #2196f3;
+}
+.js {
+  background-color: #f44336;
+}
+.php {
+  width: 60%;
+  background-color: #808080;
+}
 
 /* this is chat page style */
 .home__container {
@@ -323,8 +362,8 @@ input:checked + .slider:before {
   padding: 10px;
   font-size: 16px;
   cursor: pointer;
-  background-color: #607EAA;
-  color: #F9F5EB;
+  background-color: #607eaa;
+  color: #f9f5eb;
   outline: none;
   border: none;
   border-radius: 5px;
@@ -341,7 +380,6 @@ input:checked + .slider:before {
   flex: 0.2;
   padding: 20px;
   border-right: 1px solid #8996ff;
-
 }
 .chat__sidebar:hover {
   cursor: pointer;
@@ -398,7 +436,7 @@ input:checked + .slider:before {
 }
 .chat__footer {
   padding: 10px;
-  background-color: #F9F5EB;
+  background-color: #f9f5eb;
   height: 10vh;
 }
 .form {
@@ -422,26 +460,26 @@ input:checked + .slider:before {
   padding: 10px;
   border: none;
   outline: none;
-  color: #EAE3D2;
+  color: #eae3d2;
   cursor: pointer;
 }
 .sendBtn:hover {
   background-color: rgb(129, 201, 129);
 }
 .message__recipient {
-background-color: #f5ccc2;
-width: 300px;
-padding: 10px;
-border-radius: 10px;
-font-size: 15px;
+  background-color: #f5ccc2;
+  width: 300px;
+  padding: 10px;
+  border-radius: 10px;
+  font-size: 15px;
 }
-.message__sender{
-background-color: rgb(194, 243, 194);
-max-width: 800px;
-padding: 10px;
-border-radius: 10px;
-margin-left: auto;
-font-size: 15px;
+.message__sender {
+  background-color: rgb(194, 243, 194);
+  max-width: 800px;
+  padding: 10px;
+  border-radius: 10px;
+  margin-left: auto;
+  font-size: 15px;
 }
 .message__chats > p {
   font-size: 13px;
@@ -458,19 +496,16 @@ font-size: 15px;
 
 .pwd-copy:hover {
   cursor: pointer;
-  
 }
-
 
 .mySlider {
   -webkit-appearance: none;
   width: 100%;
   height: 10px;
-  -webkit-transition: .2s;
-  transition: opacity .2s;
+  -webkit-transition: 0.2s;
+  transition: opacity 0.2s;
   border: 1px solid #000;
   border-radius: 5px;
-
 }
 
 .mySlider::-webkit-slider-thumb {
@@ -479,11 +514,10 @@ font-size: 15px;
   width: 20px;
   height: 20px;
   border-radius: 10px;
-  background: #04AA6D;
+  background: #04aa6d;
   /* 04AA6D */
   border: 1px solid #000;
   cursor: pointer;
-  
 }
 
 .pwd-check {
@@ -526,7 +560,7 @@ font-size: 15px;
 
 /* When the checkbox is checked, add a blue background */
 .pwd-check input:checked ~ .checkmark {
-  background-color: #04AA6D;
+  background-color: #04aa6d;
 }
 
 /* Create the checkmark/indicator (hidden when not checked) */
@@ -554,8 +588,8 @@ font-size: 15px;
   transform: rotate(45deg);
 }
 
-.register-btn{
-    color: #0000ff88;
+.register-btn {
+  color: #0000ff88;
 }
 .register-btn:hover {
   cursor: pointer;
@@ -587,10 +621,12 @@ font-size: 15px;
   color: green;
   border-radius: 0.5rem;
 }
-.addTask1-btn, .addTask2-btn, .addTask3-btn:hover{
+.addTask1-btn,
+.addTask2-btn,
+.addTask3-btn:hover {
   cursor: pointer;
 }
-.curpo:hover{
+.curpo:hover {
   cursor: pointer;
 }
 
@@ -598,16 +634,25 @@ font-size: 15px;
   box-shadow: rgba(50, 50, 93, 0.25) 10px 11px 15px -1px;
 }
 .task-list-item:hover {
-  cursor: pointer ;
+  cursor: pointer;
   animation: taskspin 0.5s linear infinite;
   box-shadow: rgba(50, 50, 93, 1) 10px 11px 15px -1px;
   background-color: #c4cfdf88;
 }
 
 @keyframes taskspinn {
-  0% { transform: rotateX(0deg) ; scale: 1;}
-  50% { transform: rotateX(20deg) ; scale: 1.00; }
-  100% { transform: rotateX(0deg) ; scale: 1;}
+  0% {
+    transform: rotateX(0deg);
+    scale: 1;
+  }
+  50% {
+    transform: rotateX(20deg);
+    scale: 1;
+  }
+  100% {
+    transform: rotateX(0deg);
+    scale: 1;
+  }
   /* border: 6px solid #343fdb88; */
 }
 
@@ -622,6 +667,6 @@ font-size: 15px;
 .del-btn:hover {
   color: #d08dfd;
 }
-.del-btn{
+.del-btn {
   color: red;
 }

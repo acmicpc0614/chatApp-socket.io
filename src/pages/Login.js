@@ -1,4 +1,5 @@
 import axios from "axios";
+import jwtDecode from "jwt-decode";
 import { useState } from "react";
 import { useNavigate } from "react-router";
 import Swal from "sweetalert2";
@@ -16,10 +17,12 @@ const Login = (props) => {
       .then((res) => {
         // console.log(res.data);
         localStorage.setItem("is_authenticated", true);
-        localStorage.setItem("userName", res.data.name);
-        localStorage.setItem("userID", res.data.userID);
-        localStorage.setItem("userAvatar", res.data.avatar);
+        localStorage.setItem("token", res.data.token);
+        const user = jwtDecode(res.data.token);
+        localStorage.setItem("name", user.userName);
+        localStorage.setItem("userID", user.userID);
 
+        console.log("-------------", user);
         props.setIsLogin(true);
 
         Swal.fire({
